@@ -40,5 +40,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signInTypeChanged(_ sender: UISegmentedControl) {
         // switch UI between modes
+        if sender.selectedSegmentIndex == 0 {
+            signInButton.setTitle("Sign Up", for: .normal)
+        } else {
+            signInButton.setTitle("Sign In", for: .normal)
+        }
     }
 }
