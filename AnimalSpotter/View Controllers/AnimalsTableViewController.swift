@@ -13,6 +13,7 @@ class AnimalsTableViewController: UITableViewController {
     // MARK: - Properties
     
     private var animalNames: [String] = []
+    let apiController = APIController()
 
     // MARK: - View Lifecycle
     
@@ -24,6 +25,7 @@ class AnimalsTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         // transition to login view if conditions require
+        
     }
 
     // MARK: - Table view data source
