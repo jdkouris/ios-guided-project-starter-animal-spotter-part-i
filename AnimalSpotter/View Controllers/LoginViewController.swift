@@ -45,18 +45,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             let user = User(username: username, password: password)
             
-            apiController.signUp(with: user) { (error) in
-                if let error = error {
-                    print("Error occurred during sign up: \(error.localizedDescription)")
-                } else {
-                    DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Sign Up Successful", message: "Now please sign in.", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alert.addAction(okAction)
-                        self.present(alert, animated: true, completion: {
-                            self.loginTypeSegmentedControl.selectedSegmentIndex = 1
-                            self.signInButton.setTitle("Sign In", for: .normal)
-                        })
+            if loginType == .signUp {
+                apiController.signUp(with: user) { (error) in
+                    if let error = error {
+                        print("Error occurred during sign up: \(error.localizedDescription)")
+                    } else {
+                        DispatchQueue.main.async {
+                            let alert = UIAlertController(title: "Sign Up Successful", message: "Now please sign in.", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alert.addAction(okAction)
+                            self.present(alert, animated: true, completion: {
+                                self.loginTypeSegmentedControl.selectedSegmentIndex = 1
+                                self.loginType = .signIn
+                                self.signInButton.setTitle("Sign In", for: .normal)
+                            })
+                        }
+                    }
+                }
+            } else if loginType == .signIn {
+                apiController.signIn(with: user) { (error) in
+                    if let error = error {
+                        print("Error occurred during sign in: \(error.localizedDescription)")
+                    } else {
+                        DispatchQueue.main.async {
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }
                 }
             }
@@ -66,8 +79,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signInTypeChanged(_ sender: UISegmentedControl) {
         // switch UI between modes
         if sender.selectedSegmentIndex == 0 {
+            loginType = .signUp
             signInButton.setTitle("Sign Up", for: .normal)
         } else {
+            loginType = .signIn
             signInButton.setTitle("Sign In", for: .normal)
         }
     }
