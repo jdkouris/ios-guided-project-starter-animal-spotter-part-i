@@ -50,7 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     print("Error occurred during sign up: \(error.localizedDescription)")
                 } else {
                     DispatchQueue.main.async {
-                        let alert = UIAlertController(title: "Sign Up Successful", message: "Now please log in.", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "Sign Up Successful", message: "Now please sign in.", preferredStyle: .alert)
                         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                         alert.addAction(okAction)
                         self.present(alert, animated: true, completion: {
