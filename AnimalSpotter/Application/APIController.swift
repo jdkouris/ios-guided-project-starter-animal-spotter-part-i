@@ -17,6 +17,7 @@ enum HTTPMethod: String {
 class APIController {
     
     private let baseUrl = URL(string: "https://lambdaanimalspotter.vapor.cloud/api")!
+    var bearer: Bearer?
     
     // create function for sign up
     
