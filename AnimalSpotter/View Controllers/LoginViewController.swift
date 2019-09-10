@@ -27,7 +27,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // customize button appearance
-        signInButton.layer.cornerRadius = 5
+        signInButton.backgroundColor = UIColor(hue: 190/360, saturation: 70/100, brightness: 80/100, alpha: 1)
+        signInButton.tintColor = .white
+        signInButton.layer.cornerRadius = 8.0
     }
     
     // MARK: - Action Handlers
