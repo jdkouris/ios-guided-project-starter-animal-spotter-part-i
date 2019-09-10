@@ -57,6 +57,9 @@ class AnimalsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LoginViewModalSegue" {
             // inject dependencies
+            if let destinationVC = segue.destination as? LoginViewController {
+                destinationVC.apiController = apiController
+            }
         }
     }
 }
