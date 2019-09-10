@@ -27,6 +27,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // customize button appearance
+        signInButton.layer.cornerRadius = 5
     }
     
     // MARK: - Action Handlers
