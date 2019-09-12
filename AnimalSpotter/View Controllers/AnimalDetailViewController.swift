@@ -27,7 +27,8 @@ class AnimalDetailViewController: UIViewController {
     private func getDetails() {
         guard let apiController = apiController, let animalName = animalName else { return }
         apiController.fetchDetails(for: animalName) { (result) in
-            if let animal = try? result.get() {
+            do {
+                let animal = try result.get()
                 DispatchQueue.main.async {
                     self.updateViews(with: animal)
                 }
@@ -39,7 +40,18 @@ class AnimalDetailViewController: UIViewController {
                         }
                     }
                 })
+            } catch let error as NetworkError {
+                switch error {
+                case .noAuth:
+                    // present the login screen
+                    print("No auth error")
+                default:
+                    print("error")
+                }
+            } catch {
+                print(error.localizedDescription)
             }
+            
         }
     }
     
