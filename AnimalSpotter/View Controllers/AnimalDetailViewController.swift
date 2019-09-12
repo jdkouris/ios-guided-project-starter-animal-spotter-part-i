@@ -15,6 +15,9 @@ class AnimalDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var animalImageView: UIImageView!
     
+    var apiController: APIController?
+    var animalName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
