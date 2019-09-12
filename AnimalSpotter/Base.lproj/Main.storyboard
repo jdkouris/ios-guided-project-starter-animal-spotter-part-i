@@ -107,7 +107,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="0Jb-Sv-6ec" kind="show" id="f5q-jN-ARZ"/>
+                                    <segue destination="0Jb-Sv-6ec" kind="show" identifier="ShowAnimalDetailSegue" id="f5q-jN-ARZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="1189.8550724637682" y="732.58928571428567"/>
         </scene>
-        <!--Animal Name-->
+        <!--Animal Detail View Controller-->
         <scene sceneID="UQJ-TQ-mFQ">
             <objects>
                 <viewController id="0Jb-Sv-6ec" customClass="AnimalDetailViewController" customModule="AnimalSpotter" customModuleProvider="target" sceneMemberID="viewController">
@@ -214,7 +214,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gw9-64-nh5"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Animal Name" id="C5y-Xe-HgW"/>
                     <connections>
                         <outlet property="animalImageView" destination="pHT-FI-rDI" id="kfQ-fV-DcI"/>
                         <outlet property="coordinatesLabel" destination="hCY-et-eAY" id="lQ6-Ed-B9j"/>

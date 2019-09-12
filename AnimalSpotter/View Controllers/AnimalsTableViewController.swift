@@ -68,6 +68,13 @@ class AnimalsTableViewController: UITableViewController {
             if let destinationVC = segue.destination as? LoginViewController {
                 destinationVC.apiController = apiController
             }
+        } else if segue.identifier == "ShowAnimalDetailSegue" {
+            if let destinationVC = segue.destination as? AnimalDetailViewController {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    destinationVC.animalName = animalNames[indexPath.row]
+                }
+                destinationVC.apiController = apiController
+            }
         }
     }
 }
