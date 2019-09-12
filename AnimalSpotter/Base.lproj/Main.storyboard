@@ -134,7 +134,7 @@
         <!--Animal Name-->
         <scene sceneID="UQJ-TQ-mFQ">
             <objects>
-                <viewController id="0Jb-Sv-6ec" sceneMemberID="viewController">
+                <viewController id="0Jb-Sv-6ec" customClass="AnimalDetailViewController" customModule="AnimalSpotter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AXy-MB-bcg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,6 +215,12 @@
                         <viewLayoutGuide key="safeArea" id="gw9-64-nh5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Animal Name" id="C5y-Xe-HgW"/>
+                    <connections>
+                        <outlet property="animalImageView" destination="pHT-FI-rDI" id="kfQ-fV-DcI"/>
+                        <outlet property="coordinatesLabel" destination="hCY-et-eAY" id="lQ6-Ed-B9j"/>
+                        <outlet property="descriptionLabel" destination="h5b-KH-7uF" id="jMA-y7-oCC"/>
+                        <outlet property="spottedOnLabel" destination="rOn-5k-0V7" id="JLo-dN-BuR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RhV-7K-5l1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
